@@ -1,0 +1,1 @@
+ALTER TYPE "public"."eventsStatus" ADD VALUE 'PROCESSING';

@@ -1,0 +1,23 @@
+config:
+  environments:
+    local:
+      target: "http://localhost:3086"
+      phases:
+        - name: "Load Test Periodico"
+          arrivalRate: 20
+          duration: 10
+  plugins:
+    publish-metrics:
+      - type: html
+        output: artillery-report.html
+scenarios:
+  - name: "Pagina inicial"
+    flow:
+    - post:
+        url: "/api/psp/transfer"
+        json: 
+          amount: 100
+          keyId: "7044660102894943027"
+          holder:
+            name: 'Rios'
+            document: '43203700077'
